@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quadro de Horários</title>
+    <script>
+      async function carregarHorarios(dia) {
+        const resposta = await fetch(`/horarios/${dia}`);
+        const dados = await resposta.json();
+        const horariosDiv = document.getElementById('horarios');
+        horariosDiv.innerHTML = '';
+        if (dados.aulas.length === 0) {
+          horariosDiv.innerHTML = `Não há aulas para ${dados.dia}.`;
+        } else {
+          dados.aulas.forEach(aula => {
+            horariosDiv.innerHTML += `
+              <p>Disciplina: ${aula.Disciplina}</p>
+              <p>Sala: ${aula.Sala}</p>
+              <p>Professor: ${aula.Professor}</p>
+              <hr>
+            `;
+          });
+        }
+      }
+    </script>
+</head>
+<body>
+    <h1>Quadro de Horários - 4° Período</h1>
+    <select onchange="carregarHorarios(this.value)">
+        <option value="">Selecione um dia</option>
+        <option value="Segunda-Feira">Segunda-Feira</option>
+        <option value="Terça-Feira">Terça-Feira</option>
+        <option value="Quarta-Feira">Quarta-Feira</option>
+        <option value="Quinta-Feira">Quinta-Feira</option>
+        <option value="Sexta-Feira">Sexta-Feira</option>
+        <option value="Sábado">Sábado</option>
+    </select>
+    <div id="horarios"></div>
+</body>
+</html>
