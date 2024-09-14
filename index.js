@@ -22,8 +22,8 @@ const horarios = {
     {"Disciplina": "Inteligência Artificial Aplicada", "Sala": "BLOCO G - 107", "Professor": "lago Richard"}
   ],
   "Sexta-Feira": [
-    {"Disciplina": "Processos de Teste de Software", "Sala": "BLOCO G - 107", "Professor": "Daniel Bezerra"},
-    {"Disciplina": "Libras", "Sala": "BLOCO D 606", "Professor": "Izabelly Correia"}
+    {"Disciplina": "Processos de Teste de Software", "Sala": "BLOCO D - 606", "Professor": "Daniel Bezerra"},
+    {"Disciplina": "Libras", "Sala": "BLOCO A 606", "Professor": "Izabelly Correia"}
   ],
   "Sábado": [
     {"Disciplina": "Conceitos de Sistemas Operacionais", "Sala": "BLOCO B-202", "Professor": "Gabriel Fernandes"},
